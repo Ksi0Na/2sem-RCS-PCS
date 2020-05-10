@@ -18,12 +18,12 @@ int main()
     cout << endl;
 
     DecartCS a(1, 1);
-    DecartCS b(4, 4);
+    DecartCS b(4, 5);
 
     cout << "Distance between "
          << a.to_string() << " and "
          << b.to_string() << " is "
-         << distance(&a, &b) << endl;
+         << distance(a, b) << endl;
 
     return 0;
 }

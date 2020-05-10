@@ -1,7 +1,7 @@
 #include "header.h"
 #include <cmath>
 
-double distance(DecartCS &dot_1, DecartCS &dot_2)
+double distance(DecartCS dot_1, DecartCS dot_2)
 {
 	return 
 			sqrt(
@@ -10,7 +10,7 @@ double distance(DecartCS &dot_1, DecartCS &dot_2)
 				);
 }
 
-double distance(PolarCS &dot_1, PolarCS &dot_2)
+double distance(PolarCS dot_1, PolarCS dot_2)
 {
 	return 
 			sqrt(
@@ -21,14 +21,14 @@ double distance(PolarCS &dot_1, PolarCS &dot_2)
 				);
 }
 
-double distance(DecartCS &dot_1, PolarCS &dot_2)
+double distance(DecartCS dot_1, PolarCS dot_2)
 {
     DecartCS temp = dot_2.convert();
-	return distance(&dot_1, &temp);
+	return distance(dot_1, temp);
 }
 
-double distance(PolarCS &dot_1, DecartCS &dot_2)
+double distance(PolarCS dot_1, DecartCS dot_2)
 {
     DecartCS temp = dot_1.convert();
-	return distance(&temp, &dot_2);
+	return distance(temp, dot_2);
 }
